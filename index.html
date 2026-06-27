@@ -569,8 +569,9 @@
 
   .showreel-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 720px;
   }
 
   .reel-card {
@@ -587,19 +588,19 @@
 
   .reel-card:hover { transform: scale(1.02); }
 
-  .reel-placeholder {
+  .reel-card video {
     width: 100%;
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 16px;
-    opacity: 0.25;
-    min-height: 220px;
+    object-fit: cover;
+    display: block;
+    cursor: none;
   }
 
-  .reel-play {
+  .reel-play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 56px;
     height: 56px;
     border: 2px solid var(--cream);
@@ -607,9 +608,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    background: rgba(28,58,47,0.35);
+    transition: opacity 0.25s, transform 0.25s;
+    pointer-events: none;
   }
 
-  .reel-play::after {
+  .reel-play-btn::after {
     content: '';
     border-left: 18px solid var(--cream);
     border-top: 11px solid transparent;
@@ -617,12 +621,9 @@
     margin-left: 4px;
   }
 
-  .reel-label {
-    color: var(--cream);
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
+  .reel-card.playing .reel-play-btn {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
   }
 
   .reel-tag {
@@ -912,26 +913,27 @@
     <a href="https://cal.com/devansh-panwar-qc6eyl/30min" target="_blank" rel="noopener" class="btn-secondary">Work with us &rarr;</a>
   </div>
   <div class="showreel-grid">
-    <div class="reel-card">
-      <div class="reel-placeholder">
-        <div class="reel-play"></div>
-        <div class="reel-label">Watch reel</div>
-      </div>
+    <div class="reel-card" onclick="toggleReel(this)">
+      <video
+        src="media/abhishek.mp4"
+        poster="media/abhishek_poster.jpg"
+        playsinline
+        preload="metadata"
+        loop>
+      </video>
+      <div class="reel-play-btn"></div>
       <span class="reel-tag">Full Production</span>
     </div>
-    <div class="reel-card">
-      <div class="reel-placeholder">
-        <div class="reel-play"></div>
-        <div class="reel-label">Watch reel</div>
-      </div>
+    <div class="reel-card" onclick="toggleReel(this)">
+      <video
+        src="media/deepak.mp4"
+        poster="media/deepak_poster.jpg"
+        playsinline
+        preload="metadata"
+        loop>
+      </video>
+      <div class="reel-play-btn"></div>
       <span class="reel-tag">Personal Brand</span>
-    </div>
-    <div class="reel-card">
-      <div class="reel-placeholder">
-        <div class="reel-play"></div>
-        <div class="reel-label">Watch reel</div>
-      </div>
-      <span class="reel-tag">Scripting + Post</span>
     </div>
   </div>
 </section>
@@ -1170,6 +1172,27 @@
   }, { threshold: 0.3 });
 
   counterObserver.observe(document.querySelector('.stats'));
+
+  /* ── SHOWREEL VIDEO PLAY/PAUSE ── */
+  function toggleReel(card) {
+    const video = card.querySelector('video');
+    if (!video) return;
+
+    if (video.paused) {
+      /* Pause any other playing reel first */
+      document.querySelectorAll('.reel-card video').forEach(v => {
+        if (v !== video && !v.paused) {
+          v.pause();
+          v.closest('.reel-card').classList.remove('playing');
+        }
+      });
+      video.play();
+      card.classList.add('playing');
+    } else {
+      video.pause();
+      card.classList.remove('playing');
+    }
+  }
 
   /* ── FAQ TOGGLE ── */
   function toggleFaq(questionEl) {
