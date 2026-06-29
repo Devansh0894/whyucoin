@@ -569,9 +569,8 @@
 
   .showreel-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: minmax(0, 340px);
     gap: 20px;
-    max-width: 720px;
   }
 
   .reel-card {
@@ -750,7 +749,7 @@
     .offerings { padding: 80px 24px; }
     .offering-row { grid-template-columns: 1fr; gap: 20px; }
     .showreel { padding: 80px 24px; }
-    .showreel-grid { grid-template-columns: 1fr 1fr; }
+    .showreel-grid { grid-template-columns: 1fr; max-width: 100%; }
     .testimonials { padding: 80px 24px; }
     .testimonials-grid { grid-template-columns: 1fr; }
     .vision { padding: 80px 24px; }
@@ -923,17 +922,6 @@
       </video>
       <div class="reel-play-btn"></div>
       <span class="reel-tag">Full Production</span>
-    </div>
-    <div class="reel-card" onclick="toggleReel(this)">
-      <video
-        src="files/deepak.mp4"
-        poster="files/deepak_poster.jpg"
-        playsinline
-        preload="metadata"
-        loop>
-      </video>
-      <div class="reel-play-btn"></div>
-      <span class="reel-tag">Personal Brand</span>
     </div>
   </div>
 </section>
