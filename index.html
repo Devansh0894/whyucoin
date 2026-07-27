@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>WHYUS.co — Founder Personal Branding on Instagram</title>
+<title>WHYUS.co — Your vision, our creation</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -27,6 +27,7 @@
     overflow-x: hidden;
   }
 
+  /* ── CUSTOM CURSOR: single elastic blob ── */
   #cursor-blob {
     position: fixed;
     top: 0;
@@ -46,6 +47,7 @@
     #cursor-blob { display: none; }
   }
 
+  /* ── NAV ── */
   nav {
     position: fixed;
     top: 0;
@@ -136,6 +138,7 @@
     transform: scale(1.03);
   }
 
+  /* ── HERO ── */
   .hero {
     min-height: 100vh;
     padding: 0 48px;
@@ -147,24 +150,15 @@
     overflow: hidden;
   }
 
-  .hero-eyebrow-top {
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    opacity: 0.55;
-    margin-top: 140px;
-    margin-bottom: 20px;
-  }
-
   .hero-title {
     font-family: var(--sans);
     font-weight: 900;
-    font-size: clamp(80px, 12vw, 170px);
-    line-height: 0.9;
+    font-size: clamp(100px, 15vw, 200px);
+    line-height: 0.88;
     color: var(--dark);
     letter-spacing: -3px;
     text-transform: uppercase;
+    margin-top: 120px;
   }
 
   .hero-title .outline {
@@ -176,11 +170,11 @@
   .hero-tagline {
     font-family: var(--serif);
     font-style: italic;
-    font-size: clamp(20px, 2.4vw, 32px);
+    font-size: clamp(22px, 2.8vw, 38px);
     line-height: 1.35;
     color: var(--dark);
-    max-width: 560px;
-    margin-top: 36px;
+    max-width: 520px;
+    margin-top: 40px;
   }
 
   .hero-right {
@@ -204,6 +198,7 @@
     justify-content: flex-end;
   }
 
+  /* ── MARQUEE ── */
   .marquee-section {
     border-top: 1px solid var(--light-border);
     border-bottom: 1px solid var(--light-border);
@@ -214,7 +209,7 @@
 
   .marquee-track {
     display: inline-flex;
-    animation: marquee 22s linear infinite;
+    animation: marquee 20s linear infinite;
   }
 
   .marquee-track span {
@@ -237,6 +232,7 @@
     100% { transform: translateX(-50%); }
   }
 
+  /* ── STATS ── */
   .stats {
     padding: 100px 48px;
     display: grid;
@@ -279,6 +275,7 @@
     margin-top: 10px;
   }
 
+  /* ── SECTION: OFFERINGS ── */
   .offerings {
     padding: 120px 48px 80px;
   }
@@ -378,6 +375,7 @@
     align-self: center;
   }
 
+  /* ── VISION SECTION ── */
   .vision {
     padding: 140px 48px;
     text-align: center;
@@ -420,6 +418,7 @@
     margin: 0 auto 48px;
   }
 
+  /* ── FAQ ── */
   .faq {
     padding: 120px 48px;
     display: grid;
@@ -441,6 +440,8 @@
     font-weight: 700;
     display: block;
   }
+
+
 
   .faq-item {
     border-top: 1px solid var(--light-border);
@@ -494,8 +495,9 @@
     opacity: 0.7;
   }
 
-  .faq-item.open .faq-answer { max-height: 320px; }
+  .faq-item.open .faq-answer { max-height: 300px; }
 
+  /* ── FOOTER ── */
   footer {
     border-top: 1px solid var(--light-border);
     padding: 48px;
@@ -523,7 +525,7 @@
   }
 
   .footer-links a {
-    font-size: 11px;
+    font-size: 13px;
     color: var(--dark);
     text-decoration: none;
     opacity: 0.5;
@@ -531,12 +533,15 @@
     text-transform: uppercase;
     letter-spacing: 0.06em;
     font-weight: 500;
+    font-size: 11px;
   }
 
   .footer-links a:hover { opacity: 1; }
 
+  /* ── HOVER STATES ── */
   a, button, .faq-question { cursor: none; }
 
+  /* ── SHOWREEL SECTION ── */
   .showreel {
     padding: 120px 48px;
     border-top: 1px solid var(--light-border);
@@ -567,11 +572,6 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
     max-width: 720px;
-  }
-
-  .showreel-grid.single-reel {
-    grid-template-columns: minmax(0, 340px);
-    max-width: none;
   }
 
   .reel-card {
@@ -641,6 +641,7 @@
     border: 1px solid rgba(232,228,217,0.2);
   }
 
+  /* ── TESTIMONIALS ── */
   .testimonials {
     padding: 120px 48px;
     border-top: 1px solid var(--light-border);
@@ -737,6 +738,7 @@
     letter-spacing: 0.04em;
   }
 
+  /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
     nav { padding: 20px 24px; }
     .nav-links { display: none; }
@@ -764,15 +766,16 @@
 </head>
 <body>
 
+<!-- CURSOR -->
 <div id="cursor-blob"></div>
 
 <!-- NAV -->
 <nav>
   <a href="#" class="nav-logo">WHYUS<span>.co</span></a>
   <ul class="nav-links">
-    <li><a href="#offerings">Packages</a></li>
-    <li><a href="#showreel">Showreel</a></li>
-    <li><a href="#voices">Founders</a></li>
+    <li><a href="#offerings">Offerings</a></li>
+    <li><a href="#showreel">Work</a></li>
+    <li><a href="#voices">Voices</a></li>
     <li><a href="#faq">FAQ</a></li>
   </ul>
   <a href="https://cal.com/devansh-panwar-qc6eyl/30min" target="_blank" rel="noopener" class="btn-primary">Book a Call &rarr;</a>
@@ -780,15 +783,14 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-eyebrow-top">Personal Branding Studio · For Founders &amp; Startups</div>
   <div class="hero-title">
-    FOUNDER<br><span class="outline">MODE.</span>
+    WHYUS<br><span class="outline">.CO</span>
   </div>
   <div class="hero-tagline">
-    We turn startup founders into the most-watched voice in their category — on Instagram, one reel at a time.
+    Your vision, our creation — a creative studio crafting brand &amp; personal stories that actually get watched.
   </div>
   <div class="hero-right">
-    <p class="hero-desc">Scripts, b-roll direction, editing and a content calendar built around your face, your story and your product — so the algorithm learns your founder is the brand.</p>
+    <p class="hero-desc">Shoots, scripts, post-production and content calendars — built for founders, creators and brands who care about quality.</p>
     <div class="hero-ctas">
       <a href="https://cal.com/devansh-panwar-qc6eyl/30min" target="_blank" rel="noopener" class="btn-primary">Book Discovery Call &rarr;</a>
       <a href="#showreel" class="btn-secondary">Watch Showreel</a>
@@ -799,20 +801,20 @@
 <!-- MARQUEE -->
 <div class="marquee-section">
   <div class="marquee-track" id="marquee">
-    <span>Founder Personal Branding</span><span class="dot">·</span>
-    <span>Startup Reels</span><span class="dot">·</span>
-    <span>Founder-Led Content</span><span class="dot">·</span>
-    <span>Instagram Growth</span><span class="dot">·</span>
-    <span>SaaS Storytelling</span><span class="dot">·</span>
-    <span>Hook Writing</span><span class="dot">·</span>
-    <span>Remote Founders Welcome</span><span class="dot">·</span>
-    <span>Founder Personal Branding</span><span class="dot">·</span>
-    <span>Startup Reels</span><span class="dot">·</span>
-    <span>Founder-Led Content</span><span class="dot">·</span>
-    <span>Instagram Growth</span><span class="dot">·</span>
-    <span>SaaS Storytelling</span><span class="dot">·</span>
-    <span>Hook Writing</span><span class="dot">·</span>
-    <span>Remote Founders Welcome</span><span class="dot">·</span>
+    <span>Personal Branding</span><span class="dot">·</span>
+    <span>Content Calendars</span><span class="dot">·</span>
+    <span>Scripting</span><span class="dot">·</span>
+    <span>Post Production</span><span class="dot">·</span>
+    <span>Reels &amp; Shorts</span><span class="dot">·</span>
+    <span>Direction</span><span class="dot">·</span>
+    <span>Foreign Clients</span><span class="dot">·</span>
+    <span>Personal Branding</span><span class="dot">·</span>
+    <span>Content Calendars</span><span class="dot">·</span>
+    <span>Scripting</span><span class="dot">·</span>
+    <span>Post Production</span><span class="dot">·</span>
+    <span>Reels &amp; Shorts</span><span class="dot">·</span>
+    <span>Direction</span><span class="dot">·</span>
+    <span>Foreign Clients</span><span class="dot">·</span>
   </div>
 </div>
 
@@ -821,38 +823,38 @@
   <div class="stat-item">
     <div class="stat-eyebrow">By the numbers</div>
     <div class="stat-number" data-target="70" data-suffix="K+">0K+</div>
-    <div class="stat-label">Views generated for founders</div>
+    <div class="stat-label">Views generated for clients</div>
   </div>
   <div class="stat-item">
     <div class="stat-eyebrow">&nbsp;</div>
     <div class="stat-number" data-target="20" data-suffix="+">0+</div>
-    <div class="stat-label">Founder reels shipped</div>
+    <div class="stat-label">Projects shipped</div>
   </div>
   <div class="stat-item">
     <div class="stat-eyebrow">&nbsp;</div>
     <div class="stat-number" data-target="10" data-suffix="+">0+</div>
-    <div class="stat-label">Startups &amp; SaaS founders</div>
+    <div class="stat-label">Brands &amp; personalities</div>
   </div>
 </section>
 
 <!-- OFFERINGS -->
 <section class="offerings" id="offerings">
   <div class="section-eyebrow">What we do</div>
-  <h2 class="offerings-title">Three ways to build<br>your <em>founder brand.</em></h2>
+  <h2 class="offerings-title">Three ways<br>to work <em>with us.</em></h2>
 
   <div class="offering-row">
     <div class="offering-num">01</div>
     <div class="offering-header">
-      <div class="tag">Full Production</div>
-      <h3>Founder-Led Content — A to Z</h3>
+      <div class="tag">Brand &amp; Founders</div>
+      <h3>Full Production — A to Z</h3>
     </div>
     <div class="offering-body">
-      <p>We shoot, script, edit and post — turning your day-to-day as a founder into a consistent Instagram presence that builds trust and pulls in your next customer or hire.</p>
+      <p>End-to-end execution. Strategy, content planning, shoots, scripting and post — handled by one accountable team.</p>
       <ul class="offering-bullets">
-        <li>Founder content calendar &amp; strategy</li>
-        <li>On-ground b-roll &amp; talking-head direction</li>
-        <li>Scripting &amp; hook-first storyboards</li>
-        <li>Edit, motion graphics, sound, delivery</li>
+        <li>Content calendar &amp; strategy</li>
+        <li>On-ground shoot direction</li>
+        <li>Scripting &amp; storyboards</li>
+        <li>Edit, colour, sound, delivery</li>
       </ul>
     </div>
     <div class="offering-cta">
@@ -864,14 +866,14 @@
     <div class="offering-num">02</div>
     <div class="offering-header">
       <div class="tag">Remote-First</div>
-      <h3>Personal Branding — International Founders</h3>
+      <h3>Personal Branding — Foreign Clients</h3>
     </div>
     <div class="offering-body">
-      <p>Built for SaaS and startup founders outside India. You film on your phone or with your team — we turn it into scripted, edited, animation-backed reels that introduce you as "the next big thing."</p>
+      <p>Built for founders &amp; creators outside India. No videography on our side — you shoot, we craft the story, scripts and finished cuts.</p>
       <ul class="offering-bullets">
-        <li>Founder positioning &amp; content pillars</li>
+        <li>Positioning &amp; content pillars</li>
         <li>Hook &amp; script writing</li>
-        <li>Remote editing + intro animation</li>
+        <li>Remote post-production</li>
         <li>Calendar + publishing playbook</li>
       </ul>
     </div>
@@ -884,14 +886,14 @@
     <div class="offering-num">03</div>
     <div class="offering-header">
       <div class="tag">Strategy Only</div>
-      <h3>Founder Content Calendar</h3>
+      <h3>Content Planning &amp; Calendar</h3>
     </div>
     <div class="offering-body">
-      <p>Monthly calendars built specifically around founder-led storytelling — launch reels, "build in public" formats, product intros, and hooks your team can shoot and post.</p>
+      <p>Monthly calendars that move the needle. Hooks, formats, references and shot lists — ready for your team to execute.</p>
       <ul class="offering-bullets">
-        <li>30-day founder content calendar</li>
+        <li>30-day content calendar</li>
         <li>Hook + script bank</li>
-        <li>Shot lists &amp; reference reels</li>
+        <li>Visual references &amp; moodboards</li>
         <li>Performance review loop</li>
       </ul>
     </div>
@@ -906,21 +908,21 @@
   <div class="showreel-header">
     <div>
       <div class="section-eyebrow">Our work</div>
-      <h2 class="showreel-title">Founders we've<br><em>introduced.</em></h2>
+      <h2 class="showreel-title">Stories we've<br><em>shipped.</em></h2>
     </div>
     <a href="https://cal.com/devansh-panwar-qc6eyl/30min" target="_blank" rel="noopener" class="btn-secondary">Work with us &rarr;</a>
   </div>
   <div class="showreel-grid">
     <div class="reel-card" onclick="toggleReel(this)">
       <video
-        src="files/reel1.mp4"
-        poster="files/reel1_poster.jpg"
+        src="files/reel3.mp4"
+        poster="files/reel3_poster.jpg"
         playsinline
         preload="metadata"
         loop>
       </video>
       <div class="reel-play-btn"></div>
-      <span class="reel-tag">Founder Reel</span>
+      <span class="reel-tag">Full Production</span>
     </div>
     <div class="reel-card" onclick="toggleReel(this)">
       <video
@@ -931,7 +933,7 @@
         loop>
       </video>
       <div class="reel-play-btn"></div>
-      <span class="reel-tag">Before &amp; After</span>
+      <span class="reel-tag">Personal Brand</span>
     </div>
   </div>
 </section>
@@ -939,12 +941,12 @@
 <!-- TESTIMONIALS -->
 <section class="testimonials" id="voices">
   <div class="testimonials-header">
-    <div class="section-eyebrow">Founder voices</div>
-    <h2 class="testimonials-title">What founders<br><em>actually say.</em></h2>
+    <div class="section-eyebrow">Voices</div>
+    <h2 class="testimonials-title">What our clients<br><em>actually say.</em></h2>
   </div>
   <div class="testimonials-grid">
     <div class="testi-card">
-      <p class="testi-quote">As a first-time founder, I had no idea how to show up on camera. WHYUS scripted every reel around how I actually talk, and within a month people in my industry started recognising me from Instagram before we'd even met.</p>
+      <p class="testi-quote">Working with WHYUS was the first time I felt like the content actually sounded like me. They didn't just edit — they understood the story I was trying to tell, then made it sharper than I ever could.</p>
       <div class="testi-meta">
         <div class="testi-avatar">RK</div>
         <div>
@@ -954,32 +956,32 @@
       </div>
     </div>
     <div class="testi-card">
-      <p class="testi-quote">I was sceptical about remote production for a SaaS launch. Three founder reels in, we hit 38K views on a video shot entirely on my phone and edited over Google Drive. That reel alone brought in our first ten sign-ups.</p>
+      <p class="testi-quote">I was sceptical about remote production. Three reels in and I had my highest-performing content ever — 38K views on a video we made entirely over WhatsApp and Google Drive. These guys just get it.</p>
       <div class="testi-meta">
         <div class="testi-avatar">SB</div>
         <div>
           <div class="testi-name">Simone Beaumont</div>
-          <div class="testi-role">Founder &amp; CEO, Studio SB — London</div>
+          <div class="testi-role">CEO, Studio SB — London</div>
         </div>
       </div>
     </div>
     <div class="testi-card">
-      <p class="testi-quote">Hired them for a founder content calendar. Stayed for everything else. Within six weeks I had a real posting rhythm, sharper hooks, and DMs from other founders asking who was doing our content.</p>
+      <p class="testi-quote">Hired them for a content calendar. Stayed for everything else. Within six weeks we had a full production rhythm, better hooks, and actual DMs coming in from Instagram. Genuinely rare to find a team this dialled-in.</p>
       <div class="testi-meta">
         <div class="testi-avatar">AM</div>
         <div>
           <div class="testi-name">Aakash Malhotra</div>
-          <div class="testi-role">Co-founder, Brew &amp; Co.</div>
+          <div class="testi-role">Co-founder, Brew & Co. Café</div>
         </div>
       </div>
     </div>
     <div class="testi-card">
-      <p class="testi-quote">Before WHYUS, I was just another founder posting product screenshots. Now my face and my story are the brand — and I can trace specific customer conversations directly back to specific reels.</p>
+      <p class="testi-quote">Before WHYUS, our reels looked like every other café account. Now we have an actual identity online — better hooks, sharper edits, and footfall that we can directly trace back to specific posts. Worth every rupee.</p>
       <div class="testi-meta">
         <div class="testi-avatar">VV</div>
         <div>
           <div class="testi-name">Vansh Veshle</div>
-          <div class="testi-role">Founder, Iron Labs</div>
+          <div class="testi-role">Founder, Iron Café</div>
         </div>
       </div>
     </div>
@@ -990,9 +992,9 @@
 <section class="vision" id="work">
   <div class="vision-eyebrow">Ready when you are</div>
   <h2 class="vision-title">
-    Your face,<br><em>the next big thing.</em>
+    Your vision,<br><em>our creation.</em>
   </h2>
-  <p class="vision-sub">One 20-minute call. No pitches, no decks — just a conversation about how we make you the most recognisable founder in your space.</p>
+  <p class="vision-sub">One 20-minute call. No pitches, no decks — just a conversation about what you want to build.</p>
   <a href="https://cal.com/devansh-panwar-qc6eyl/30min" target="_blank" rel="noopener" class="btn-primary">Book the Call &rarr;</a>
 </section>
 
@@ -1000,52 +1002,43 @@
 <section class="faq" id="faq">
   <div>
     <div class="section-eyebrow">FAQ</div>
-    <h2 class="faq-title">Things founders <em>ask us.</em></h2>
+    <h2 class="faq-title">Things people <em>ask us.</em></h2>
   </div>
   <div class="faq-list">
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <div class="faq-q-text"><span class="faq-num">01</span> How does a founder project start?</div>
+        <div class="faq-q-text"><span class="faq-num">01</span> How does a project start?</div>
         <span class="faq-toggle">+</span>
       </div>
       <div class="faq-answer">
-        <div class="faq-answer-inner">Everything begins with a 20-minute discovery call — no pitches, no presentations. We talk through your startup, your audience, and how comfortable you are on camera. From there, we build a content package around your reality and get started within a week.</div>
+        <div class="faq-answer-inner">Everything begins with a 20-minute discovery call — no pitches, no presentations. We talk through your goals, audience, and what you're building. From there, we propose the right package and get started within a week.</div>
       </div>
     </div>
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <div class="faq-q-text"><span class="faq-num">02</span> I'm camera-shy — can you still make this work?</div>
+        <div class="faq-q-text"><span class="faq-num">02</span> Do you work with international clients?</div>
         <span class="faq-toggle">+</span>
       </div>
       <div class="faq-answer">
-        <div class="faq-answer-inner">Yes — most founders start this way. We script for your natural speaking style, keep early reels short and low-pressure, and build confidence over the first few shoots. Most founders relax into it within their first two or three reels.</div>
+        <div class="faq-answer-inner">Yes — our Remote-First package is built exactly for that. You shoot your footage, we handle everything else: scripts, story, editing, colour and delivery. Timezone-friendly async workflows, tight turnarounds.</div>
       </div>
     </div>
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <div class="faq-q-text"><span class="faq-num">03</span> Do you work with international founders?</div>
+        <div class="faq-q-text"><span class="faq-num">03</span> What does turnaround look like?</div>
         <span class="faq-toggle">+</span>
       </div>
       <div class="faq-answer">
-        <div class="faq-answer-inner">Yes — our Remote-First package is built exactly for that. You shoot your own footage or b-roll, we handle everything else: scripts, story, editing, motion graphics and delivery. Timezone-friendly async workflows, tight turnarounds.</div>
+        <div class="faq-answer-inner">Typical turnaround for edited reels is 3–5 business days from approved script. Full production projects are scoped during onboarding. We always communicate timelines upfront — no surprises.</div>
       </div>
     </div>
     <div class="faq-item">
       <div class="faq-question" onclick="toggleFaq(this)">
-        <div class="faq-q-text"><span class="faq-num">04</span> What does turnaround look like?</div>
+        <div class="faq-q-text"><span class="faq-num">04</span> What platforms do you optimise for?</div>
         <span class="faq-toggle">+</span>
       </div>
       <div class="faq-answer">
-        <div class="faq-answer-inner">Typical turnaround for edited founder reels is 3–5 business days from approved script. Launch-day or "introducing the next big thing" reels are scoped during onboarding. We always communicate timelines upfront — no surprises.</div>
-      </div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFaq(this)">
-        <div class="faq-q-text"><span class="faq-num">05</span> Do you work with pre-launch / stealth startups?</div>
-        <span class="faq-toggle">+</span>
-      </div>
-      <div class="faq-answer">
-        <div class="faq-answer-inner">Absolutely. Pre-launch founder branding is one of our favourite things to build — teaser reels, "building in public" formats, and founder-story content that primes an audience before you ever announce the product.</div>
+        <div class="faq-answer-inner">Primarily Instagram Reels and YouTube Shorts, but we also deliver for LinkedIn, TikTok, and long-form YouTube. Every format has its own pacing, hook structure, and caption strategy — we build for the platform, not just the brief.</div>
       </div>
     </div>
   </div>
@@ -1054,9 +1047,9 @@
 <!-- FOOTER -->
 <footer>
   <a href="#" class="footer-logo">WHYUS<span style="font-size:10px;font-weight:400;vertical-align:super;margin-left:1px;">.co</span></a>
-  <span class="footer-copy">© 2025 WHYUS.co — Founder Personal Branding Studio</span>
+  <span class="footer-copy">© 2025 WHYUS.co — All rights reserved</span>
   <div class="footer-links">
-    <a href="#offerings">Packages</a>
+    <a href="#offerings">Offerings</a>
     <a href="#work">Work</a>
     <a href="#faq">FAQ</a>
     <a href="mailto:hello@whyus.co">Contact</a>
@@ -1064,6 +1057,7 @@
 </footer>
 
 <script>
+  /* ── ELASTIC BLOB CURSOR ── */
   const blob = document.getElementById('cursor-blob');
 
   let mouseX = window.innerWidth / 2;
@@ -1099,16 +1093,19 @@
   const DOWN_SCALE = 0.7;
 
   function animateBlob() {
+    /* Lag-follow: blob eases toward the real pointer (slightly looser lag,
+       so the gap between pointer and blob reads clearly while moving) */
     blobX += (mouseX - blobX) * 0.14;
     blobY += (mouseY - blobY) * 0.14;
 
+    /* Velocity drives squash & stretch, like the reference cursor */
     const vx = blobX - prevBlobX;
     const vy = blobY - prevBlobY;
     const speed = Math.min(Math.sqrt(vx * vx + vy * vy), 40);
     const angle = Math.atan2(vy, vx) * (180 / Math.PI);
 
-    const stretch = 1 + speed * 0.06;
-    const squash = Math.max(1 - speed * 0.03, 0.5);
+    const stretch = 1 + speed * 0.06;    // elongate along travel direction
+    const squash = Math.max(1 - speed * 0.03, 0.5); // thin out perpendicular
 
     let size = document.body.classList.contains('cursor-link') ? HOVER_SIZE : BASE_SIZE;
     if (isDown) size *= DOWN_SCALE;
@@ -1125,6 +1122,7 @@
   }
   animateBlob();
 
+  /* Hover states — re-query after DOM ready to catch all links */
   function bindCursorHovers() {
     document.querySelectorAll('a, button, .faq-question').forEach(el => {
       el.addEventListener('mouseenter', () => document.body.classList.add('cursor-link'));
@@ -1133,6 +1131,7 @@
   }
   bindCursorHovers();
 
+  /* Magnetic pull on buttons */
   document.querySelectorAll('.btn-primary, .btn-secondary').forEach(el => {
     el.addEventListener('mousemove', e => {
       const rect = el.getBoundingClientRect();
@@ -1143,6 +1142,7 @@
     el.addEventListener('mouseleave', () => { el.style.transform = ''; });
   });
 
+  /* ── COUNTER ANIMATION ── */
   function easeOutQuart(t) { return 1 - Math.pow(1 - t, 4); }
 
   function animateCounter(el) {
@@ -1173,11 +1173,13 @@
 
   counterObserver.observe(document.querySelector('.stats'));
 
+  /* ── SHOWREEL VIDEO PLAY/PAUSE ── */
   function toggleReel(card) {
     const video = card.querySelector('video');
     if (!video) return;
 
     if (video.paused) {
+      /* Pause any other playing reel first */
       document.querySelectorAll('.reel-card video').forEach(v => {
         if (v !== video && !v.paused) {
           v.pause();
@@ -1192,6 +1194,7 @@
     }
   }
 
+  /* ── FAQ TOGGLE ── */
   function toggleFaq(questionEl) {
     const item = questionEl.parentElement;
     const wasOpen = item.classList.contains('open');
@@ -1199,6 +1202,7 @@
     if (!wasOpen) item.classList.add('open');
   }
 
+  /* ── SCROLL REVEAL ── */
   const revealObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
