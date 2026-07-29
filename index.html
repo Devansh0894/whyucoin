@@ -1186,7 +1186,13 @@
           v.closest('.reel-card').classList.remove('playing');
         }
       });
-      video.play();
+      const playPromise = video.play();
+      if (playPromise !== undefined) {
+        /* Ignore the harmless AbortError that fires if pause() is called
+           again before this play() request has finished starting up
+           (e.g. rapid double-clicking) */
+        playPromise.catch(() => {});
+      }
       card.classList.add('playing');
     } else {
       video.pause();
