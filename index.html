@@ -318,6 +318,14 @@
   }
 
   /* Two long-form 16:9 reels, side by side */
+
+  .showreel-label { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.6; margin: 56px 0 16px; }
+  .showreel-label:first-of-type { margin-top: 0; }
+  .showreel-featured { display: block; }
+  .showreel-featured .reel-card { width: 100%; }
+  .showreel-reels { display: grid; grid-template-columns: repeat(2, minmax(0, 280px)); gap: 20px; }
+  .reel-card.vertical { aspect-ratio: 9 / 16; }
+  .reel-card.pending { display: flex; align-items: center; justify-content: center; color: #E8E4D9; font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.85; }
   .showreel-stage {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -798,6 +806,7 @@
   /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
     .showreel-stage { grid-template-columns: 1fr; }
+    .showreel-reels { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 
     nav { padding: 20px 24px; }
     .nav-links { display: none; }
@@ -902,14 +911,33 @@
   <div class="showreel-header">
     <div>
       <div class="section-eyebrow">Our work</div>
-      <h2 class="showreel-title">The showreel,<br><em>start to finish.</em></h2>
+      <h2 class="showreel-title">Our work,<br><em>start to finish.</em></h2>
     </div>
     <div class="showreel-header-right">
-      <p class="showreel-lede">Two long-form cuts, fully animated and scored in-house — the studio reel and a founder story film.</p>
+      <p class="showreel-lede">Launch films and founder content, made in-house.</p>
       <a href="https://cal.com/devansh-panwar-qc6eyl/30min" target="_blank" rel="noopener" class="btn-secondary">Work with us &rarr;</a>
     </div>
   </div>
 
+  <!-- 1. FIRST THING VISITORS SEE: Content Max launch film -->
+  <div class="showreel-label">Launch film</div>
+  <div class="showreel-featured">
+    <div class="reel-card" onclick="toggleReel(this)">
+      <video src="files/content-max-launch.mp4" poster="files/content-max-launch-poster.jpg" playsinline preload="metadata" loop></video>
+      <div class="reel-play-btn"></div>
+      <div class="reel-meta">
+        <span class="reel-tag">Content Max &middot; Launch Film</span>
+        <div class="reel-right">
+          <span class="reel-duration">0:38</span>
+          <span class="reel-sound" onclick="toggleSound(event, this)">Sound on</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TODO: founder reels (1-2) go here when ready -->
+  <!-- 3. Existing films go last; replace with the two new videos when ready -->
+  <div class="showreel-label">More films</div>
   <div class="showreel-stage">
     <div class="reel-card" onclick="toggleReel(this)">
       <video
@@ -946,6 +974,7 @@
         </div>
       </div>
     </div>
+  
   </div>
 </section>
 
